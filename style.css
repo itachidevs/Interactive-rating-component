@@ -60,6 +60,7 @@
   font-family: "Overpass";
   font-size: 1rem;
   font-weight: 500;
+  margin: 1rem;
 }
 .rating-container {
   width: 100%;
@@ -92,17 +93,20 @@
   color: var(--verydarkblue);
 }
 .cardthankyou {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-    display: none;
+ padding: 1.2rem;
+ display: none;
+ 
 }
 .shothankyou {
- display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:1.5rem;
+  
 }
-.hidesubitcard{
-display: none;
+.hidesubitcard {
+  animation: bounce 3.2s ease-in-out;
+  display: none;
 }
 .rating {
   color: var(--orange);
@@ -110,4 +114,77 @@ display: none;
   border: 1px solid var(--orange);
   padding: 1rem;
   border-radius: 1rem;
+}
+@media bounce{
+  from{
+    transform:scale(-50px,50px);
+  }
+  to{
+    transform: scale(50px,-50px);
+  }
+}
+@media only screen and (max-width: 375px) {
+  /* Add mobile-specific styles here */
+  .card {
+    width: 180px;
+    height: fit-content;
+  }
+  .star-container {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+  }
+  
+  .card-heading {
+    font-size: 1rem;
+  }
+  .card-desc {
+    font-size: 1rem;
+  }
+  .rate-btn {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
+  .rating-container {
+    display: flex;
+    width: 100%;
+    gap: 0.1rem;
+    padding-left: 0;
+    flex-wrap: wrap;
+  }
+  .cardthankyou{
+    width: fit-content;
+    height: fit-content;
+    padding: 2rem;
+  }
+}
+
+/* Desktop styles (min-width: 1440px) */
+@media only screen and (min-width: 1440px) {
+  /* Add desktop-specific styles here */
+  body {
+    font-size: 18px;
+  }
+  .card{
+  width: 900px;
+  height:auto;
+    padding: 2rem;
+  }
+  .cardthankyou{
+   width: 55%;
+
+  }
+  .card-img{
+    width: 100%;
+  }
+  .card-head{
+    font-size: 2rem;
+  }
+  .card-desc{
+    font-size: 1.5rem;
+  }
+  .card-head{
+    font-size: 3rem;
+  }
 }
